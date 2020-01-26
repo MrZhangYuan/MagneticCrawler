@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FBBA7C6-6521-4336-A46A-F647ECBA5D76}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UltimatePresentation</RootNamespace>
+    <AssemblyName>UltimatePresentation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\DialogContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\DialogStacks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Flyout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\FlyoutContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\RichViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\FlyoutStacks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GlyphButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ProgressRing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\RichViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\SplitterGrip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\SplitterItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\SplitterItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\SplitterResizePreviewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviours\AttachableCollection.cs" />
+    <Compile Include="Behaviours\Behavior.cs" />
+    <Compile Include="Behaviours\BehaviorCollection.cs" />
+    <Compile Include="Behaviours\Constants.cs" />
+    <Compile Include="Behaviours\DefaultTriggerAttribute.cs" />
+    <Compile Include="Behaviours\ExtendedVisualStateManager.cs" />
+    <Compile Include="Behaviours\IAttachedObject.cs" />
+    <Compile Include="Behaviours\Interaction.cs" />
+    <Compile Include="Behaviours\IWindowPlacementSettings.cs" />
+    <Compile Include="Behaviours\MouseDragElementBehavior.cs" />
+    <Compile Include="Behaviours\StylizedBehaviorCollection.cs" />
+    <Compile Include="Behaviours\StylizedBehaviors.cs" />
+    <Compile Include="Behaviours\TransitionEffect.cs" />
+    <Compile Include="Behaviours\TriggerAction.cs" />
+    <Compile Include="Behaviours\TriggerActionCollection.cs" />
+    <Compile Include="Behaviours\TriggerBase.cs" />
+    <Compile Include="Behaviours\TriggerCollection.cs" />
+    <Compile Include="Behaviours\WindowApplicationSettings.cs" />
+    <Compile Include="Behaviours\WindowSettings.cs" />
+    <Compile Include="Behaviours\WindowsSettingBehaviour.cs" />
+    <Compile Include="Converters\BoolenOrMultiConverter.cs" />
+    <Compile Include="Converters\BoolenToVisibilityConverter.cs" />
+    <Compile Include="Converters\MultiValueIndentityConverter.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\ComGuids.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\Debug.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\DoubleUtil.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\DpiHelper.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\ErrorCodes.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\MessageWindow.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\NativeMethods.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\ShellProvider.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\StreamHelper.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\Utilities.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\Utilities.Windows.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\Utilities.Wpf.cs" />
+    <Compile Include="Microsoft.Windows.Shell\Standard\Verify.cs" />
+    <Compile Include="Microsoft.Windows.Shell\SystemCommands.cs" />
+    <Compile Include="Microsoft.Windows.Shell\SystemParameters2.cs" />
+    <Compile Include="Microsoft.Windows.Shell\WindowChrome.cs" />
+    <Compile Include="Microsoft.Windows.Shell\WindowChromeWorker.cs" />
+    <Compile Include="Native\Win32\AccentPolicy.cs" />
+    <Compile Include="Native\Win32\AccentState.cs" />
+    <Compile Include="Native\Win32\MARGINS.cs" />
+    <Compile Include="Native\Win32\MONITORINFO.cs" />
+    <Compile Include="Native\Win32\POINT.cs" />
+    <Compile Include="Native\Win32\RECT.cs" />
+    <Compile Include="Native\Win32\SIZE.cs" />
+    <Compile Include="Native\Win32\WindowCompositionAttribute.cs" />
+    <Compile Include="Native\Win32\WindowCompositionAttributeData.cs" />
+    <Compile Include="Native\Win32\WINDOWINFO.cs" />
+    <Compile Include="Native\Win32\WINDOWPLACEMENT.cs" />
+    <Compile Include="Native\Win32\WINDOWPOS.cs" />
+    <Compile Include="Native\Win32\WNDCLASS.cs" />
+    <Compile Include="Native\WindowsAeroHelper.cs" />
+    <Compile Include="Presentation\ControlCommands.cs" />
+    <Compile Include="Presentation\CustomChromeControl.cs" />
+    <Compile Include="Presentation\CustomChromeWindow.cs" />
+    <Compile Include="Presentation\DependencyObjectExtension.cs" />
+    <Compile Include="Presentation\Dialog.cs" />
+    <Compile Include="Presentation\DialogContainer.cs" />
+    <Compile Include="Presentation\DialogStacks.cs" />
+    <Compile Include="Presentation\DisposableObject.cs" />
+    <Compile Include="Presentation\DpiHelper.cs" />
+    <Compile Include="Presentation\Flyout.cs" />
+    <Compile Include="Presentation\FlyoutContainer.cs" />
+    <Compile Include="Presentation\GreedyWrapPanel.cs" />
+    <Compile Include="Presentation\RichViewControl.cs" />
+    <Compile Include="Presentation\FlyoutStacks.cs" />
+    <Compile Include="Presentation\GifAnimation.cs" />
+    <Compile Include="Presentation\GifImage.cs" />
+    <Compile Include="Presentation\GlyphButton.cs" />
+    <Compile Include="Presentation\HwndWrapper.cs" />
+    <Compile Include="Presentation\IDialogContainer.cs" />
+    <Compile Include="Presentation\IFlyoutContainer.cs" />
+    <Compile Include="Presentation\IFlyoutDialogResult.cs" />
+    <Compile Include="Presentation\INonClientArea.cs" />
+    <Compile Include="Native\NativeMethodsUltimate.cs" />
+    <Compile Include="Native\OSVersionHelper.cs" />
+    <Compile Include="Native\Screen.cs" />
+    <Compile Include="Native\UtilityMethods.cs" />
+    <Compile Include="Presentation\InteropButton.cs" />
+    <Compile Include="Presentation\ProgressRing.cs" />
+    <Compile Include="Presentation\RichViewItem.cs" />
+    <Compile Include="Presentation\SpacingWrapPanel.cs" />
+    <Compile Include="Presentation\SplitterItem.cs" />
+    <Compile Include="Presentation\SplitterItemsControl.cs" />
+    <Compile Include="Presentation\SplitterPanel.cs" />
+    <Compile Include="Presentation\StreachUniformPanel.cs" />
+    <Compile Include="Presentation\VirtualizingTilePanel.cs" />
+    <Compile Include="Presentation\VirtualizingWrapPanel.cs" />
+    <Compile Include="Presentation\WindowHelper.cs" />
+    <Compile Include="Presentation\WindowTitleBar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\RibbonExceptionStringTable1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RibbonExceptionStringTable.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\RibbonExceptionStringTable.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RibbonExceptionStringTable1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Bitmaps\Window\bottom.png" />
+    <Resource Include="Resources\Bitmaps\Window\bottomleft.png" />
+    <Resource Include="Resources\Bitmaps\Window\bottomright.png" />
+    <Resource Include="Resources\Bitmaps\Window\cornerbottomleft.png" />
+    <Resource Include="Resources\Bitmaps\Window\cornerbottomright.png" />
+    <Resource Include="Resources\Bitmaps\Window\cornertopleft.png" />
+    <Resource Include="Resources\Bitmaps\Window\cornertopright.png" />
+    <Resource Include="Resources\Bitmaps\Window\left.png" />
+    <Resource Include="Resources\Bitmaps\Window\leftbottom.png" />
+    <Resource Include="Resources\Bitmaps\Window\lefttop.png" />
+    <Resource Include="Resources\Bitmaps\Window\right.png" />
+    <Resource Include="Resources\Bitmaps\Window\rightbottom.png" />
+    <Resource Include="Resources\Bitmaps\Window\righttop.png" />
+    <Resource Include="Resources\Bitmaps\Window\top.png" />
+    <Resource Include="Resources\Bitmaps\Window\topleft.png" />
+    <Resource Include="Resources\Bitmaps\Window\topright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Bitmaps\DefaultSystemIcon.png" />
+    <Resource Include="Resources\Bitmaps\GlassyDefaultSystemIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UltimateCore\UltimateCore.csproj">
+      <Project>{66BBB21D-AA56-4783-9A36-2A8554B661FC}</Project>
+      <Name>UltimateCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

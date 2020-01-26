@@ -1,0 +1,37 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:UltimatePresentation.Presentation">
+    <Style x:Uid="Style_1" TargetType="{x:Type local:SplitterGrip}">
+        <Setter x:Uid="Setter_4" Property="Control.Background" Value="Transparent" />
+        <Setter x:Uid="Setter_4" Property="SnapsToDevicePixels" Value="True" />
+        <Setter x:Uid="Setter_1" Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate x:Uid="ControlTemplate_1" TargetType="{x:Type local:SplitterGrip}">
+                    <Border
+                        x:Name="Bd"
+                        x:Uid="Bd"
+                        Background="{TemplateBinding Control.Background}"
+                        SnapsToDevicePixels="true">
+                        <Border
+                            x:Name="InnerBd"
+                            x:Uid="InnerBd"
+                            Background="#FFF0F0F0"
+                            Visibility="Collapsed" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger x:Uid="Trigger_1" Property="local:SplitterGrip.Orientation" Value="Horizontal">
+                            <Setter x:Uid="Setter_2" Property="FrameworkElement.Cursor" Value="SizeWE" />
+                            <Setter x:Uid="Setter_5" TargetName="InnerBd" Property="UIElement.Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger x:Uid="Trigger_2" Property="local:SplitterGrip.Orientation" Value="Vertical">
+                            <Setter x:Uid="Setter_3" Property="FrameworkElement.Cursor" Value="SizeNS" />
+                            <Setter x:Uid="Setter_6" Property="Control.Background" Value="#FFF0F0F0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

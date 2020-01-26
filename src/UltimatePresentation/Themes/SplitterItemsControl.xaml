@@ -1,0 +1,20 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:UltimatePresentation.Presentation">
+    <Style x:Uid="Style_1" TargetType="{x:Type local:SplitterItemsControl}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter x:Uid="Setter_1" Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate x:Uid="ControlTemplate_1" TargetType="{x:Type local:SplitterItemsControl}">
+                    <local:SplitterPanel
+                        x:Uid="vs:SplitterPanel_1"
+                        IsItemsHost="true"
+                        Orientation="{TemplateBinding local:SplitterItemsControl.Orientation}"
+                        SnapsToDevicePixels="True" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter x:Uid="Setter_2" Property="Control.IsTabStop" Value="false" />
+    </Style>
+</ResourceDictionary>

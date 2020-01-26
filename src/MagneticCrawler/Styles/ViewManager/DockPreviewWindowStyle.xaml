@@ -1,0 +1,190 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:Microsoft.VisualStudio.PlatformUI.Shell;assembly=Microsoft.VisualStudio.Shell.ViewManager"
+    xmlns:vs="clr-namespace:Microsoft.VisualStudio.PlatformUI.Shell.Controls;assembly=Microsoft.VisualStudio.Shell.ViewManager">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="DocumentTabItemStyle.xaml" />
+        <ResourceDictionary Source="TabGroupTabItemStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="{x:Type vs:DockPreviewWindow}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type vs:DockPreviewWindow}">
+                    <Canvas>
+                        <Grid
+                            x:Name="DockPreviewGrid"
+                            Width="{TemplateBinding FrameworkElement.Width}"
+                            Height="{TemplateBinding FrameworkElement.Height}"
+                            Opacity="0.3"
+                            ZIndex="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border
+                                x:Name="TopTab"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Width="{TemplateBinding vs:DockPreviewWindow.TabWidth}"
+                                Height="{TemplateBinding vs:DockPreviewWindow.TabHeight}"
+                                Background="{StaticResource {x:Static SystemColors.HotTrackBrushKey}}"
+                                BorderBrush="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                BorderThickness="5,5,5,0" />
+                            <Border
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Width="{TemplateBinding vs:DockPreviewWindow.HorizontalTabOffset}"
+                                Background="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            <Border
+                                x:Name="TopTabBottom"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Height="5"
+                                Background="{StaticResource {x:Static SystemColors.HotTrackBrushKey}}"
+                                BorderBrush="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                BorderThickness="5,0,5,0" />
+                            <Border
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Background="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            <Border
+                                Grid.Row="2"
+                                Grid.ColumnSpan="3"
+                                Background="{StaticResource {x:Static SystemColors.HotTrackBrushKey}}"
+                                BorderBrush="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                BorderThickness="5,0,5,0" />
+                            <Border
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Background="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            <Border
+                                x:Name="BottomTabTop"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Height="5"
+                                Background="{StaticResource {x:Static SystemColors.HotTrackBrushKey}}"
+                                BorderBrush="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                BorderThickness="5,0,5,0" />
+                            <Border
+                                Grid.Row="3"
+                                Grid.Column="2"
+                                Background="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            <Border
+                                x:Name="BottomTab"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Width="{TemplateBinding vs:DockPreviewWindow.TabWidth}"
+                                Height="{TemplateBinding vs:DockPreviewWindow.TabHeight}"
+                                Background="{StaticResource {x:Static SystemColors.HotTrackBrushKey}}"
+                                BorderBrush="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                BorderThickness="5,0,5,5" />
+                        </Grid>
+                        <Grid
+                            Width="{TemplateBinding FrameworkElement.Width}"
+                            Height="{TemplateBinding FrameworkElement.Height}"
+                            Opacity="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TabControl
+                                x:Name="PART_DocumentGroupControl"
+                                Grid.Row="0"
+                                ItemContainerStyle="{StaticResource {x:Static vs:DocumentGroupControl.TabItemStyleKey}}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:View}">
+                                        <vs:DragUndockHeader Focusable="false" ViewFrameworkElement="{Binding Content}">
+                                            <vs:DragUndockHeader.ViewElement>
+                                                <Binding />
+                                            </vs:DragUndockHeader.ViewElement>
+                                            <ContentControl Content="{Binding Title}" ContentTemplate="{Binding DocumentTabTitleTemplate}" />
+                                        </vs:DragUndockHeader>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <Control.Template>
+                                    <ControlTemplate TargetType="{x:Type TabControl}">
+                                        <vs:DocumentTabPanel Margin="2,2,2,0" IsItemsHost="true" />
+                                    </ControlTemplate>
+                                </Control.Template>
+                            </TabControl>
+                            <TabControl
+                                x:Name="PART_InsertedDocumentTabsControl"
+                                Grid.Row="1"
+                                ItemContainerStyle="{StaticResource {x:Static vs:DocumentGroupControl.TabItemStyleKey}}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:View}">
+                                        <vs:DragUndockHeader Focusable="false" ViewFrameworkElement="{Binding Content}">
+                                            <vs:DragUndockHeader.ViewElement>
+                                                <Binding />
+                                            </vs:DragUndockHeader.ViewElement>
+                                            <ContentControl Content="{Binding Title}" ContentTemplate="{Binding DocumentTabTitleTemplate}" />
+                                        </vs:DragUndockHeader>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <Control.Template>
+                                    <ControlTemplate TargetType="{x:Type TabControl}">
+                                        <vs:DocumentTabPanel Margin="2,2,2,0" IsItemsHost="true" />
+                                    </ControlTemplate>
+                                </Control.Template>
+                            </TabControl>
+                            <TabControl
+                                x:Name="PART_TabGroupControl"
+                                Grid.Row="2"
+                                ItemContainerStyle="{StaticResource {x:Static vs:TabGroupControl.TabItemStyleKey}}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:View}">
+                                        <vs:DragUndockHeader Focusable="false" ViewFrameworkElement="{Binding Content}">
+                                            <vs:DragUndockHeader.ViewElement>
+                                                <Binding />
+                                            </vs:DragUndockHeader.ViewElement>
+                                            <ContentControl Content="{Binding Title}" ContentTemplate="{Binding TabTitleTemplate}" />
+                                        </vs:DragUndockHeader>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <Control.Template>
+                                    <ControlTemplate TargetType="{x:Type TabControl}">
+                                        <vs:SingleRowTabPanel Margin="2,0,2,2" IsItemsHost="true" />
+                                    </ControlTemplate>
+                                </Control.Template>
+                            </TabControl>
+                        </Grid>
+                    </Canvas>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="vs:DockPreviewWindow.ShowTopTab" Value="false">
+                            <Setter TargetName="TopTab" Property="UIElement.Visibility" Value="Collapsed" />
+                            <Setter TargetName="TopTabBottom" Property="Panel.Background" Value="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="vs:DockPreviewWindow.ShowBottomTab" Value="false">
+                            <Setter TargetName="BottomTab" Property="UIElement.Visibility" Value="Collapsed" />
+                            <Setter TargetName="BottomTabTop" Property="Panel.Background" Value="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockPreviewWindow.ShowTopTab" Value="true" />
+                                <Condition Property="vs:DockPreviewWindow.TabWidth" Value="0" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="DockPreviewGrid" Property="UIElement.Opacity" Value="0" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockPreviewWindow.ShowBottomTab" Value="true" />
+                                <Condition Property="vs:DockPreviewWindow.TabWidth" Value="0" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="DockPreviewGrid" Property="UIElement.Opacity" Value="0" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,44 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vs="clr-namespace:Microsoft.VisualStudio.PlatformUI.Shell.Controls;assembly=Microsoft.VisualStudio.Shell.ViewManager">
+    <Style TargetType="{x:Type vs:ViewFrame}">
+        <Setter Property="UIElement.Focusable" Value="false" />
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="true" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type vs:ViewFrame}">
+                    <Border x:Name="ViewFrameBorder" SnapsToDevicePixels="true">
+                        <vs:DockTarget
+                            Background="Transparent"
+                            DockSiteType="NonDraggable"
+                            DockTargetType="SidesOnly">
+                            <vs:DockTarget Background="Transparent" DockTargetType="Inside">
+                                <DockPanel>
+                                    <vs:DockTarget DockPanel.Dock="Top" DockTargetType="FillPreview">
+                                        <vs:DockTarget.AdornmentTarget>
+                                            <Binding ElementName="ViewFrameBorder" />
+                                        </vs:DockTarget.AdornmentTarget>
+                                        <vs:ViewHeader ContainingElement="{TemplateBinding vs:ViewPresenter.ContainingElement}" View="{TemplateBinding vs:ViewPresenter.View}">
+                                            <vs:ViewHeader.ContainingFrameworkElement>
+                                                <Binding RelativeSource="{RelativeSource TemplatedParent}" />
+                                            </vs:ViewHeader.ContainingFrameworkElement>
+                                        </vs:ViewHeader>
+                                    </vs:DockTarget>
+                                    <Border Background="{StaticResource ToolWindow_BackgroundBrush}">
+                                        <ContentPresenter x:Name="Presenter" Focusable="false" />
+                                    </Border>
+                                </DockPanel>
+                            </vs:DockTarget>
+                        </vs:DockTarget>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="vs:FloatingWindow.IsFloating" Value="false">
+                            <Setter TargetName="Presenter" Property="FrameworkElement.Margin" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

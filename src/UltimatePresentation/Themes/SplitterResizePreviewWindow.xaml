@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:UltimatePresentation.Presentation">
+    <Style x:Uid="Style_1" TargetType="{x:Type local:SplitterResizePreviewWindow}">
+        <Setter x:Uid="Setter_2" Property="Control.Background" Value="Blue" />
+        <Setter x:Uid="Setter_3" Property="UIElement.Opacity" Value="0.5" />
+        <Setter x:Uid="Setter_1" Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate x:Uid="ControlTemplate_1" TargetType="{x:Type local:SplitterResizePreviewWindow}">
+                    <Border x:Uid="Border_1" Background="{TemplateBinding Control.Background}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ViewManager/AutoHideRootControlStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/AutoHideTabItemStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/AutoHideWindowStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/DataTemplates.xaml" />
+        <ResourceDictionary Source="ViewManager/DockGroupAdornerStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/DockGroupControlStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/DockPreviewWindowStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/DockRootControlStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/DockSiteAdornerStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/DocumentGroupContainerControlStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/DocumentGroupControlStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/DocumentTabItemStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/FloatingWindowStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/TabGroupControlStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/TabGroupTabItemStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/ViewFrameStyle.xaml" />
+        <ResourceDictionary Source="ViewManager/ViewHeaderStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

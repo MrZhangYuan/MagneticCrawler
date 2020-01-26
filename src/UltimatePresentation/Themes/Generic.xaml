@@ -1,0 +1,23 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Presentation="clr-namespace:UltimatePresentation.Presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/GlyphButton.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/ProgressRing.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/DialogStacks.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/DialogContainer.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/Dialog.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/RichViewControl.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/RichViewItem.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/FlyoutStacks.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/Flyout.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/FlyoutContainer.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/SplitterGrip.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/SplitterResizePreviewWindow.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/SplitterItem.xaml" />
+        <ResourceDictionary Source="/UltimatePresentation;component/Themes/SplitterItemsControl.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+</ResourceDictionary>

@@ -1,0 +1,64 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:convert="clr-namespace:MagneticCrawler.Converters"
+    xmlns:vs="clr-namespace:Microsoft.VisualStudio.PlatformUI.Shell.Controls;assembly=Microsoft.VisualStudio.Shell.ViewManager">
+    <DataTemplate x:Key="ViewBase_TitleTemplate">
+        <DockPanel ToolTip="{Binding ToolTipText}">
+            <Image
+                Width="13"
+                Height="13"
+                Margin="0,0,3,0"
+                Source="{Binding Icon}"
+                Visibility="{Binding HasIcon, Converter={x:Static convert:BooleanToVisibilityConverter.Instance}}" />
+            <TextBlock
+                Margin="4,0,6,1"
+                Text="This is Title"
+                TextTrimming="CharacterEllipsis" />
+            <!--  Text="{Binding Title, Converter={x:Static convert:AccessTextConverter.Instance}}"  -->
+
+            <Rectangle
+                x:Name="Grip"
+                Height="5"
+                Margin="0,0,4,0"
+                Fill="{StaticResource ToolGrip_BackgroundBrush}" />
+        </DockPanel>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding View.IsActive, RelativeSource={RelativeSource AncestorType={x:Type vs:ViewHeader}}}" Value="True">
+                <Setter TargetName="Grip" Property="Shape.Fill" Value="{StaticResource ToolGripActive_BackgroundBrush}" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+    <DataTemplate x:Key="ViewBase_TabTitleTemplate">
+        <DockPanel>
+            <Image
+                Width="13"
+                Height="13"
+                Margin="0,0,3,0"
+                Source="{Binding Icon}"
+                Visibility="{Binding HasIcon, Converter={x:Static convert:BooleanToVisibilityConverter.Instance}}" />
+            <AccessText
+                MaxWidth="160"
+                IsHitTestVisible="false"
+                Text="This is Title"
+                TextTrimming="CharacterEllipsis" />
+            <!--  Text="{Binding Title}"  -->
+
+        </DockPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="ViewBase_DocumentTabTitleTemplate">
+        <DockPanel>
+            <Image
+                Width="13"
+                Height="13"
+                Margin="0,0,3,0"
+                Source="{Binding Icon}"
+                Visibility="{Binding HasIcon, Converter={x:Static convert:BooleanToVisibilityConverter.Instance}}" />
+            <AccessText
+                MaxWidth="160"
+                IsHitTestVisible="false"
+                Text="This is Title"
+                TextTrimming="CharacterEllipsis" />
+        </DockPanel>
+    </DataTemplate>
+</ResourceDictionary>

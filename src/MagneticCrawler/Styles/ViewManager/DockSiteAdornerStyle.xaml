@@ -1,0 +1,190 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vs="clr-namespace:Microsoft.VisualStudio.PlatformUI.Shell.Controls;assembly=Microsoft.VisualStudio.Shell.ViewManager">
+    <Style TargetType="{x:Type vs:DockSiteAdorner}">
+        <Setter Property="vs:DockSiteAdorner.IsHighlighted">
+            <Setter.Value>
+                <Binding Path="(vs:FloatingWindow.IsFloatingWindowDragWithin)" RelativeSource="{RelativeSource Self}" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FrameworkElement.Height" Value="32" />
+        <Setter Property="FrameworkElement.Width" Value="32" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type vs:DockSiteAdorner}">
+                    <Border
+                        x:Name="Outline"
+                        Background="Transparent"
+                        BorderBrush="{StaticResource DockTarget_BackgroundBrush}"
+                        BorderThickness="0"
+                        Opacity="0.7">
+                        <Grid x:Name="Grid">
+                            <Border
+                                x:Name="Background"
+                                Background="{StaticResource DockTargetButton_BackgroundBrush}"
+                                BorderBrush="{StaticResource DockTargetButton_BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="2" />
+                            <Grid
+                                x:Name="WindowGlyph"
+                                Width="24"
+                                Height="24"
+                                Margin="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                                <Border
+                                    Background="Transparent"
+                                    BorderBrush="{StaticResource DockTargetGlyph_BorderBrush}"
+                                    BorderThickness="1,3,1,1"
+                                    CornerRadius="0,0,1,1" />
+                                <Border
+                                    x:Name="WindowGlyphFill"
+                                    Background="{StaticResource DockTargetGlyph_BackgroundBrush}"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="1,3,1,1"
+                                    CornerRadius="0,0,1,1" />
+                                <Line
+                                    x:Name="DocumentSplitLine"
+                                    Stroke="{StaticResource DockTargetGlyph_BorderBrush}"
+                                    StrokeDashArray="1 1"
+                                    StrokeThickness="1"
+                                    Visibility="Collapsed" />
+                            </Grid>
+                            <Path
+                                x:Name="ArrowGlyph"
+                                Width="4"
+                                Height="8"
+                                Margin="6"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Data="M 4,0 L 4,8 0,4 Z"
+                                Fill="{StaticResource DockTargetArrow_BackgroundBrush}"
+                                Visibility="Collapsed" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockAdorner.DockDirection" Value="Left" />
+                                <Condition Property="vs:DockSiteAdorner.CreatesDocumentGroup" Value="false" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ArrowGlyph" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="ArrowGlyph" Property="FrameworkElement.HorizontalAlignment" Value="Right" />
+                            <Setter TargetName="WindowGlyph" Property="FrameworkElement.Width" Value="12" />
+                            <Setter TargetName="WindowGlyph" Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockAdorner.DockDirection" Value="Right" />
+                                <Condition Property="vs:DockSiteAdorner.CreatesDocumentGroup" Value="false" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ArrowGlyph" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="ArrowGlyph" Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+                            <Setter TargetName="ArrowGlyph" Property="Path.Data" Value="M 0,0 L 0,8 4,4 Z" />
+                            <Setter TargetName="WindowGlyph" Property="FrameworkElement.Width" Value="12" />
+                            <Setter TargetName="WindowGlyph" Property="FrameworkElement.HorizontalAlignment" Value="Right" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockAdorner.DockDirection" Value="Top" />
+                                <Condition Property="vs:DockSiteAdorner.CreatesDocumentGroup" Value="false" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ArrowGlyph" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="ArrowGlyph" Property="FrameworkElement.VerticalAlignment" Value="Bottom" />
+                            <Setter TargetName="ArrowGlyph" Property="Path.Data" Value="M 0,4 L 4,0 8,4 Z" />
+                            <Setter TargetName="ArrowGlyph" Property="FrameworkElement.Width" Value="8" />
+                            <Setter TargetName="ArrowGlyph" Property="FrameworkElement.Height" Value="4" />
+                            <Setter TargetName="WindowGlyph" Property="FrameworkElement.Height" Value="12" />
+                            <Setter TargetName="WindowGlyph" Property="FrameworkElement.VerticalAlignment" Value="Top" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockAdorner.DockDirection" Value="Bottom" />
+                                <Condition Property="vs:DockSiteAdorner.CreatesDocumentGroup" Value="false" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ArrowGlyph" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="ArrowGlyph" Property="FrameworkElement.VerticalAlignment" Value="Top" />
+                            <Setter TargetName="ArrowGlyph" Property="Path.Data" Value="M 0,0 L 4,4 8,0 Z" />
+                            <Setter TargetName="ArrowGlyph" Property="FrameworkElement.Width" Value="8" />
+                            <Setter TargetName="ArrowGlyph" Property="FrameworkElement.Height" Value="4" />
+                            <Setter TargetName="WindowGlyph" Property="FrameworkElement.Height" Value="12" />
+                            <Setter TargetName="WindowGlyph" Property="FrameworkElement.VerticalAlignment" Value="Bottom" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockAdorner.DockDirection" Value="Left" />
+                                <Condition Property="vs:DockSiteAdorner.CreatesDocumentGroup" Value="true" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="WindowGlyphFill" Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+                            <Setter TargetName="WindowGlyphFill" Property="Border.BorderThickness" Value="1,3,1,1" />
+                            <Setter TargetName="WindowGlyphFill" Property="FrameworkElement.Width" Value="12" />
+                            <Setter TargetName="DocumentSplitLine" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="DocumentSplitLine" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.X1" Value="11.5" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.Y1" Value="0" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.X2" Value="11.5" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.Y2" Value="24" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockAdorner.DockDirection" Value="Right" />
+                                <Condition Property="vs:DockSiteAdorner.CreatesDocumentGroup" Value="true" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="WindowGlyphFill" Property="FrameworkElement.HorizontalAlignment" Value="Right" />
+                            <Setter TargetName="WindowGlyphFill" Property="Border.BorderThickness" Value="1,3,1,1" />
+                            <Setter TargetName="WindowGlyphFill" Property="FrameworkElement.Width" Value="12" />
+                            <Setter TargetName="DocumentSplitLine" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="DocumentSplitLine" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.X1" Value="12.5" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.Y1" Value="0" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.X2" Value="12.5" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.Y2" Value="24" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockAdorner.DockDirection" Value="Top" />
+                                <Condition Property="vs:DockSiteAdorner.CreatesDocumentGroup" Value="true" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="WindowGlyphFill" Property="FrameworkElement.VerticalAlignment" Value="Top" />
+                            <Setter TargetName="WindowGlyphFill" Property="Border.BorderThickness" Value="1,3,1,1" />
+                            <Setter TargetName="WindowGlyphFill" Property="FrameworkElement.Height" Value="12" />
+                            <Setter TargetName="DocumentSplitLine" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.X1" Value="0" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.Y1" Value="11.5" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.X2" Value="24" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.Y2" Value="11.5" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="vs:DockAdorner.DockDirection" Value="Bottom" />
+                                <Condition Property="vs:DockSiteAdorner.CreatesDocumentGroup" Value="true" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="WindowGlyphFill" Property="FrameworkElement.VerticalAlignment" Value="Bottom" />
+                            <Setter TargetName="WindowGlyphFill" Property="Border.BorderThickness" Value="1,1,1,1" />
+                            <Setter TargetName="WindowGlyphFill" Property="FrameworkElement.Height" Value="12" />
+                            <Setter TargetName="DocumentSplitLine" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.X1" Value="0" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.Y1" Value="12.5" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.X2" Value="24" />
+                            <Setter TargetName="DocumentSplitLine" Property="Line.Y2" Value="12.5" />
+                        </MultiTrigger>
+                        <DataTrigger Value="Outside">
+                            <DataTrigger.Binding>
+                                <Binding Path="AdornedElement.DockTargetType" RelativeSource="{RelativeSource Self}" />
+                            </DataTrigger.Binding>
+                            <Setter TargetName="Outline" Property="Panel.Background" Value="{StaticResource DockTarget_BackgroundBrush}" />
+                            <Setter TargetName="Outline" Property="Border.BorderThickness" Value="1" />
+                            <Setter TargetName="Outline" Property="Border.Padding" Value="3" />
+                            <Setter Property="FrameworkElement.Width" Value="40" />
+                            <Setter Property="FrameworkElement.Height" Value="40" />
+                        </DataTrigger>
+                        <Trigger Property="vs:DockSiteAdorner.IsHighlighted" Value="true">
+                            <Setter TargetName="Outline" Property="UIElement.Opacity" Value="1" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,72 @@
+﻿<ultimate:Dialog
+        x:Class="MagneticCrawler.Dialogs.AboutDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:MagneticCrawler"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ultimate="http://schems.ultimate.com/netfx/2016/xaml/presentation"
+        Width="700"
+        VerticalAlignment="Center"
+        d:DesignWidth="800"
+        Background="White"
+        BorderBrush="{StaticResource MainWindow_ActiveBorderBrush}"
+        BorderThickness="1"
+        mc:Ignorable="d">
+        <Grid>
+                <ultimate:GlyphButton
+                        Grid.Column="1"
+                        Width="40"
+                        Height="40"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"
+                        Command="{x:Static ultimate:ControlCommands.CloseDialog}">
+                        <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="16"
+                                Foreground="Black"
+                                Text="×" />
+                </ultimate:GlyphButton>
+
+                <StackPanel Margin="20,10">
+                        <StackPanel.Resources>
+                                <Style TargetType="TextBlock">
+                                        <Setter Property="FontSize" Value="14" />
+                                        <Setter Property="Margin" Value="0,5" />
+                                        <Setter Property="TextWrapping" Value="Wrap" />
+                                        <Setter Property="TextWrapping" Value="Wrap" />
+                                </Style>
+                        </StackPanel.Resources>
+                        <TextBlock
+                                HorizontalAlignment="Center"
+                                FontSize="24"
+                                Text="免责声明" />
+
+                        <TextBlock Text="       鉴于MagneticCrawler以非人工检索方式、根据您键入的关键字自动爬取第三方搜索引擎，一切因使用MagneticCrawler而可能遭致的意外、疏忽、侵权及其造成的损失（包括因下载被搜索链接到的第三方网站内容而感染电脑病毒），MagneticCrawler对其概不负责，亦不承担任何法律责任。" />
+                        <TextBlock Text="       任何通过使用MagneticCrawler而搜索链接到的资源或第三方网页均系他人制作或提供，您可能从该第三方网页上获得资讯及享用服务，MagneticCrawler对其合法性概不负责，亦不承担任何法律责任。" />
+                        <TextBlock Text="       MagneticCrawler搜索结果根据您键入的关键字自动搜索获得并生成，不代表MagneticCrawler赞成被搜索链接到的第三方网页上的内容或立场。" />
+                        <TextBlock Text="       您应该对使用MagneticCrawler的结果自行承担风险。MagneticCrawler不做任何形式的保证：不保证搜索结果满足您的要求，不保证搜索服务不中断，不保证搜索结果的安全性、正确性、及时性、合法性。因网络状况、通讯线路、第三方网站等任何原因而导致您不能正常使用MagneticCrawler，MagneticCrawler不承担任何法律责任。" />
+                        <TextBlock Text="       MagneticCrawler尊重并保护所有使用MagneticCrawler用户的个人隐私权，您注册的用户名、电子邮件地址等个人资料，非经您亲自许可或根据相关法律、法规的强制性规定，MagneticCrawler不会主动地泄露给第三方。MagneticCrawler提醒您：您在使用MagneticCrawler时输入的关键字将不被认为是您的个人隐私资料。" />
+                        <TextBlock Text="       MagneticCrawler尊重每一个被爬取磁力搜索引擎，MagneticCrawler只是为了方便资源整合而开发，任何磁力引擎如果不想被MagneticCrawler抓取，应该及时向MagneticCrawler反映。" />
+                        <TextBlock Text="       任何单位或个人认为通过MagneticCrawler链接到的第三方网页内容可能涉嫌侵犯其信息网络传播权，应该及时向MagneticCrawler提出书面权利通知，并提供身份证明、权属证明及详细侵权情况证明。MagneticCrawler在收到上述法律文件后，将会依法尽快断开相关链接内容。详情参见特定频道的著作权保护声明。" />
+                        <TextBlock Text="       MagneticCrawler作为一款免费工具提供给电影爱好者，仅作为学习娱乐之用，严禁任何人以任何目的将其应用到商业用途或以此牟利。一经发现，究其法律责任。" />
+
+                        <StackPanel
+                                Margin="0,20,0,0"
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal"
+                                TextBlock.Foreground="DarkGray">
+                                <TextBlock VerticalAlignment="Center" Text="版本：" />
+                                <TextBlock VerticalAlignment="Center" Text="{x:Static local:AppInfo.AppVersion}" />
+                                <TextBlock
+                                        Margin="10,0,0,0"
+                                        VerticalAlignment="Center"
+                                        Text="联系方式（QQ）：" />
+                                <TextBlock VerticalAlignment="Center" Text="{x:Static local:AppInfo.QQ}" />
+                        </StackPanel>
+                </StackPanel>
+        </Grid>
+</ultimate:Dialog>
